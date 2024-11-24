@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome Page</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url("https://images.collegedunia.com/public/college_data/images/campusimage/14603573661428476116.eff9d149bf0c4a4ea6c76a8625f5e13d.jpg"); /* Background image */
+            background-size: cover; /* Ensures the image covers the entire background */
+            background-position: center center; /* Center the image */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Welcome Container */
+        .welcome-container {
+            background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #2575fc;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #555;
+            margin: 20px 0;
+        }
+
+        .logout-btn {
+            background-color: #6a11cb;
+            padding: 12px 20px;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 1.1em;
+        }
+
+        .logout-btn:hover {
+            background-color: #2575fc;
+        }
+
+        /* Ensure responsiveness */
+        @media (max-width: 600px) {
+            .welcome-container {
+                width: 90%;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-container">
+        <h1>Welcome, <span id="username">Sourabh Kumar</span><br>Roll Number: <span id="roll">409</span><br>CGPA: <span id="cgpa">8.0</span><br>Congratulations!</h1>
+        <p>We are glad to have you on board.</p>
+        <a href="index.html" class="logout-btn">Logout</a>
+    </div>
+
+    <script>
+        // Example of dynamically setting the content in case needed
+        // You can set values dynamically using JavaScript if required
+        const username = "Sourabh Kumar";
+        const roll = "409";
+        const cgpa = "8.0";
+
+        document.getElementById("username").innerText = username;
+        document.getElementById("roll").innerText = roll;
+        document.getElementById("cgpa").innerText = cgpa;
+    </script>
+</body>
+</html>

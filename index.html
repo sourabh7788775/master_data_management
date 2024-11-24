@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login Page</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url("https://images.collegedunia.com/public/college_data/images/campusimage/14603573661428476116.eff9d149bf0c4a4ea6c76a8625f5e13d.jpg"); /* Add the background image URL */
+            background-size: cover; /* Ensures the image covers the entire background */
+            background-position: center center; /* Center the image */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Container for the login form */
+        .login-container {
+            background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for a card-like effect */
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        /* Header styling */
+        h1 {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        /* Form elements */
+        label {
+            font-size: 1.1em;
+            color: #555;
+            display: block;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        /* Input fields */
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            font-size: 1em;
+            outline: none;
+            transition: border 0.3s ease-in-out;
+        }
+
+        /* Focus effect on input fields */
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-color: #2575fc; /* Blue border on focus */
+        }
+
+        /* Submit button */
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #2575fc;
+            color: #fff;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Button hover effect */
+        button:hover {
+            background-color: #6a11cb;
+        }
+
+        /* Additional spacing for the form elements */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Responsive Design for smaller screens */
+        @media (max-width: 500px) {
+            .login-container {
+                padding: 20px;
+                width: 90%;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <!-- Form for username and password input -->
+        <form id="loginForm" onsubmit="return validateLogin(event)">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            
+            <button type="submit">Login</button>
+            <p id="error-message" style="color: red; display: none;">Invalid username or password. Please try again.</p>
+        </form>
+    </div>
+
+    <script>
+        // Simulating the login process with JS
+        function validateLogin(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // Predefined credentials
+            const correctUsername = "admin";
+            const correctPassword = "pass@123";
+
+            if (username === correctUsername && password === correctPassword) {
+                // Redirect to welcome page if credentials are correct
+                window.location.href = "welcome.html"; <!-- Ensure correct path -->
+            } else {
+                // Show error message if credentials are incorrect
+                document.getElementById("error-message").style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
